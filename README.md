@@ -11,7 +11,7 @@ steps:
 
 2.npm install
 
-3.test environment: node -v       npm -v       grunt -v
+3.test environment: "node -v"       "npm -v"       "grunt -v"
 
-4.grunt pro-c  to test WebApp
+4.run "grunt pro-c"  to test WebApp
 
