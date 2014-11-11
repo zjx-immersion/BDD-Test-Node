@@ -15,3 +15,12 @@ steps:
 
 4.run "grunt pro-c"  to test WebApp
 
+
+---------------------------------------
+
+Another easy way for seperated terminal to operate the project without initial steps and node install:
+
+position the project root and run "sh node_console/openConsole.sh" will open a terminal with node environment
+
+
+
