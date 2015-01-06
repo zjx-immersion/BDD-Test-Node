@@ -18,16 +18,18 @@ exports.config = {
 //    chromeOnly: true,
 
     capabilities: {
-         browserName: 'chrome',
+        // browserName: 'chrome',
         'version': '',
         'platform': 'ANY',
-        "firefox_binary": "./dependences/firefox/MacOS/firefox",//dependences/firefox/MacOS/firefox
+        //"firefox_binary": "./dependences/firefox/MacOS/firefox",//dependences/firefox/MacOS/firefox
         "binary_": "./dependences/firefox/MacOS/firefox",
         "binary" : "./dependences/chrome/MacOS/Google Chrome",///Applications/GoogleChrome.app/Contents/MacOS/Google Chromes
         'chromeOptions': {'args': ['--disable-extensions']},
-        'phantomjs.binary.path': './node_modules/phantomjs/bin/phantomjs',  //./dependences/phantomjs-1.9.8-macosx/bin/phantomjs
+        'phantomjs.binary.path': './dependences/phantomjs-1.9.8-macosx/bin/phantomjs',  //./node_modules/phantomjs/bin/phantomjs
         'phantomjs.cli.args': ['--ignore-ssl-errors=true',  '--web-security=false']
     },
+
+//    allScriptsTimeout: 50000,
 
   // A base URL for your application under test. Calls to protractor.get()
   // with relative paths will be prepended with this.
@@ -43,7 +45,7 @@ exports.config = {
   ],
 
   cucumberOpts: {
-        require: ['./e2e/features/step_definitions/stepDefinitions.js', './e2e/features/support/world.js']
+        require: ['./e2e/features/step_definitions/*.js', './e2e/features/support/world.js']
         //'test/e2e/**/*_spec.js'
 //        format: 'progress'
 //        format: 'pretty'

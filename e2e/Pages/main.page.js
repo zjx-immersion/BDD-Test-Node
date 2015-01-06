@@ -1,18 +1,17 @@
 /**
- * Created by jxzhong on 10/27/14.
+ * Created by jxzhong on 12/31/14.
  */
 'use strict';
-var awsomeThing = require('../Modules/main.module');
 
 var Page = require('astrolabe').Page;
 
 module.exports = Page.create({
-    url:	{ value: 'http://127.0.0.1:9000' },
+    url:	{ value: 'http://127.0.0.1:9000/home' },
 
-    button: { get: function () { return this.findElement( this.by.className('btn-success') ); } },
+    button: { get: function () { return element( this.by.className('btn-primary') ); } },
+    todoItemInput: { get: function () { return this.findElement( this.by.name('todoText') ); } },
+    homeTitle: { get: function () { return this.findElement( this.by.name('homeTitle') ); } },
+    todoList :{ get: function () { return element.all( this.by.name('delete') ); } }
 
-    awsomeThings: { get: function() { return this.findElements( this.by.css('.thing.ng-scope') ); } },
-    awsomeThing: { value: function(index) { return awsomeThing( this.findElement( this.by.css('.thing.ng-scope:nth-child('+index+')' ))); } },
-    tittle: { get: function() { return browser.getTitle(); } }
 
 });
