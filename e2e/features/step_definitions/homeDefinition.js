@@ -5,25 +5,17 @@ var chai = require('chai');
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 
-//var assert = chai.assert;
 var expect = chai.expect;
 var homePage = require( '../../Pages/main.page' );
 
 var homeDefinitionsWrapper = function () {
 
-//  this.beforeEach(function() {
-//    return browser.ignoreSynchronization = false;
-//  });
-
     this.Given(/^I am visiting the home Page$/, function(next) {
 
-
         expect(homePage.todoItemInput).to.be.ok;
-//
 
         next();
     });
-
 
     this.When(/^I input in todo item "(.*)"$/, function(todoItem, next) {
 
@@ -55,7 +47,6 @@ var homeDefinitionsWrapper = function () {
         next();
 
     });
-
 
     this.Then(/^delete the new item so that the todo list count is ([\d\.]+)$/, function(count, next) {
         //console.log(count+" access last step !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");

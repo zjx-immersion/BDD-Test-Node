@@ -5,27 +5,14 @@ var chai = require('chai');
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 
-//var assert = chai.assert;
 var expect = chai.expect;
 var aboutPage = require( '../../Pages/about.page' );
 
 var homeDefinitionsWrapper = function () {
 
-//  this.beforeEach(function() {
-//    return browser.ignoreSynchronization = false;
-//  });
-
     this.Given(/^I am visiting the about page that title is "(.*)"$/, function(title, next) {
 
         expect(aboutPage.aboutMenuButton).to.exist;
-//
-//        console.log('-------------------------------------------');
-//
-//        aboutPage.aboutMenuButton.getOuterHtml().then(function(text) {
-//            console.log(text);
-//            console.log('-------------------------------------------');
-//        });
-
 
         aboutPage.aboutMenuButton.click();
 
@@ -33,7 +20,6 @@ var homeDefinitionsWrapper = function () {
 
         next();
     });
-
 
     this.When(/^I click the add item button:$/, function(table, next) {
 
@@ -54,6 +40,7 @@ var homeDefinitionsWrapper = function () {
         console.log(name +'----------'+ age);
 
         aboutPage.userNameInput.sendKeys(name);
+
         aboutPage.ageInput.sendKeys(age);
 
         next();
@@ -70,28 +57,19 @@ var homeDefinitionsWrapper = function () {
 
     });
 
-
     this.When(/^click the ok button$/, function(next){
 
         aboutPage.okButton.click();
-        setTimeout(next,100);
+
+        next();
 
     });
 
-
-
-
     this.Then(/^I should see the table view's count is ([\d\.]+)$/, function(count, next) {
 
-        try {
-            expect(aboutPage.clientList.count()).to.eventually.equal(parseInt(count));
-        }catch(e){
-            console.log('client list s\' count isn\'t 6');
-        }
+         expect(aboutPage.clientList.count()).to.eventually.equal(parseInt(count));
 
-//        browser.close();
         next();
-
     });
 };
 
