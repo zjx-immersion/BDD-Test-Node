@@ -13,7 +13,9 @@ steps:
 
 3.test environment: "node -v"       "npm -v"       "grunt -v"
 
-4.run "grunt pro-c"  to test WebApp
+4.npm run install-webdriver
+
+5.run "grunt pro-c"  to test WebApp
 
 
 ---------------------------------------
